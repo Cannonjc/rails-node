@@ -1,0 +1,15 @@
+= form_with(model: pub_test, local: true) do |form|
+  - if pub_test.errors.any?
+    #error_explanation
+      h2
+        = pluralize(pub_test.errors.count, "error")
+        |  prohibited this pub_test from being saved:
+      ul
+        - pub_test.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :url
+    = form.text_field :url
+  .actions
+    = form.submit

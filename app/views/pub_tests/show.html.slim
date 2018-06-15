@@ -1,0 +1,11 @@
+p#notice
+  = notice
+p
+  strong
+    | Url:
+  = @pub_test.url
+= link_to 'Edit', edit_pub_test_path(@pub_test)
+|  |
+= link_to 'Back', pub_tests_path
+|  |
+= link_to 'Run Crawl', run_crawl_path(@pub_test.id), remote: true

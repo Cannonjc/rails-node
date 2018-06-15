@@ -1,0 +1,23 @@
+p#notice
+  = notice
+h1
+  | Pub Tests
+table
+  thead
+    tr
+      th
+        | Url
+      th[colspan="3"]
+  tbody
+    - @pub_tests.each do |pub_test|
+      tr
+        td
+          = pub_test.url
+        td
+          = link_to 'Show', pub_test
+        td
+          = link_to 'Edit', edit_pub_test_path(pub_test)
+        td
+          = link_to 'Destroy', pub_test, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Pub Test', new_pub_test_path

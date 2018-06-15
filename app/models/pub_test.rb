@@ -1,0 +1,2 @@
+class PubTest < ApplicationRecord
+end
